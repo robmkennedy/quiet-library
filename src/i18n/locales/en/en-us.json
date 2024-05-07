@@ -1,0 +1,121 @@
+{
+    "app": {
+        "title": "The Quiet Library",
+        "brand": "The Quiet Library Brand"
+    },
+    "header": {
+        "link": {
+            "home": "Home",
+            "titles": "Titles",
+            "subjects": "Subjects",
+            "authors": "Authors",
+            "content": "Content",
+            "about": "About"
+        }
+    },
+    "features": {
+        "titles": {
+            "title": "Titles",
+            "enter": "Enter Book Title",
+            "results": {
+                "searching": "Searching for book",
+                "error": "An error has occurred when searching for the book. Please try again.",
+                "request": "Please enter a book title in the field and click the Search button.",
+                "notFound": "Unable to find a matching book title. Please try again."
+            },
+            "buttons": {
+                "showMore": "Show More Search Results"
+            },
+            "cover": {
+                "loading": "Loading cover",
+                "error": "Unable to load book cover"
+            }
+        },
+        "history": {
+            "title": "Viewing History",
+            "loading": "Loading your viewing history",
+            "error": "An error occurred when loading the viewing history. Please try again.",
+            "empty": "You have no movies in your viewing history. You should review some!"
+        },
+        "recommendations": {
+            "title": "Recommendations",
+            "none": "There are no recommendations available as your viewing history is empty.",
+            "actor": "Actor",
+            "genre": "Genre",
+            "watched": "Movies Watched",
+            "actorTitle": "Your favorite actor is",
+            "actorDescription": "Perhaps you would like other movies starring the following actors you have watched.",
+            "genreTitle": "Your favorite genre is",
+            "genreDescription": "Perhaps you would like other movies of the following genres you have watched."
+        },
+        "about": {
+            "title": "About This App",
+            "loading": "Loading content about this app",
+            "error": "An error occurred when loading this content. Please try again."
+        },
+        "movies": {
+            "poster": {
+                "loading": "Loading Poster",
+                "error": "Unable to load movie poster"
+            }
+        }
+    },
+    "reviewers": {
+        "imdb": "IMDb",
+        "metacritic": "Metacritic",
+        "tomatoes": "Rotten Tomatoes"
+    },
+    "model": {
+        "movie": {
+            "title": "Title",
+            "year": "Year",
+            "plot": "Plot",
+            "actors": "Actors",
+            "genre": "Genre"
+        },
+        "review": {
+            "rating": {
+                "terrible": "Terrible",
+                "poor": "Poor",
+                "average": "Average",
+                "good": "Good",
+                "excellent": "Excellent"
+            }
+        }
+    },
+    "common": {
+        "error": "An error has occurred. Please reload the application and try again.",
+        "search": "Search",
+        "loading": "Loading"
+    },
+
+
+
+
+
+    "page.movie.loading": "Loading movie",
+    "page.movie.loading.error": "An error occurred when loading the movie. Please try again.",
+    "page.movie.not.found": "Unable to find a matching movie title! Please try again.",
+    "page.movie.buttons.add": "Add To Viewing History",
+    "page.movie.buttons.delete": "Save To Viewing History",
+    "page.movie.buttons.remove": "Delete From Viewing History",
+    "page.movie.review.add": "Add My Review",
+    "page.movie.review.edit": "Edit My Review",
+    "page.movie.review.save": "Save My Review",
+    "page.movie.review.delete": "Delete My Review",
+    "page.movie.review.cancel": "Cancel",
+    "page.movie.review.title": "My Review",
+    "page.movie.review.select.rating": "Select Rating",
+    "page.movie.review.enter.comments": "Enter Comments",
+    "page.movie.review.comments.here": "Enter comments here",
+    "page.movie.review.none": "You have not reviewed this movie yet. Click the Add button to create a new review.",
+    "page.movie.none.selected": "No movie has been currently selected. To review a movie, search for it's title from the Search page."
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,14 @@
+@use 'styles/variables';
+
+.rk-box-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+    h5 {
+        font-weight: variables.$rk-font-light;
+    }
+}

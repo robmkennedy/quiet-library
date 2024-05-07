@@ -1,0 +1,23 @@
+@use 'styles/colors';
+@use 'styles/variables';
+
+.rk-about-content {
+
+    h2,
+    h3,
+    h4,
+    p,
+    li {
+        font-weight: variables.$rk-font-light;
+    }
+
+    h2,
+    h3,
+    h4 {
+        color: colors.$rk-secondary;
+    }
+
+    ul {
+        margin-bottom: 1.5rem;
+    }
+}
