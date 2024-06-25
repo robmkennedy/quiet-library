@@ -45,7 +45,7 @@ For the first iteration of this app, we will not support specific users logging 
 #### To Do
 * Investigate and implement version 6 of react-router and lazy load routes.
 * Add a color scheme picker that will provide light/dark modes.
-* Investigate and utilise basic redux sagas.
+* Investigate and utilise basic Redux Sagas.
 * Use validation library to generate TS types from schema and validate data returned from API.
 * Chunk features into separate files with lazy loading.
 * Encode/escape strings to prevent XSS flaws.
@@ -53,21 +53,33 @@ For the first iteration of this app, we will not support specific users logging 
 * Include the Abort Controller in api handling.
 * Add Jest unit tests and full Cypress feature tests.
 
+#### Routing
+- Client-side routing is required for a simple page app. **React Router** is one of the most convenient and popular. It also accommodates parameters in routes which allows us to route to a page to edit a single movie (based on the unique id).
 
-#### React Router V6
-The latest version of react-router attempts to separate the route configuration from the rendering. It also moves to using react hooks. It provides functionality for fetching data before rendering, lazy loading content, and specifying custom loaders per route. Alongside configuring routes using `Route` components, routes may also be configured using plain objects via the `createBrowserRouter` function.
-The information located at https://reactrouter.com/en/main/upgrading/v6-data is probably the best read for understanding the new changes. 
+- The latest version of react-router (V6) attempts to separate the route configuration from the rendering. It also moves to using react hooks. It provides functionality for fetching data before rendering, lazy loading content, and specifying custom loaders per route. Alongside configuring routes using `Route` components, routes may also be configured using plain objects via the `createBrowserRouter` function.
 
-The entire app is still wrapped by the browser router, but now it is created via the `RouterProvider` component. 
+- The entire app is still wrapped by the browser router, but now it is created via the `RouterProvider` component. 
 In v5, we also wrapped the entire app with the `BrowserRouter`, but we could place our routes anywhere in our component tree (allowing us to maintain a header in the same place between routing). To achieve the same functionality in v6, we specify a base layout component for the base route (/) and then use react-routers `Outlet` component to indicate where the route content should be rendered.
 
+- The information located at https://reactrouter.com/en/main/upgrading/v6-data is probably the best read for understanding the new V6 changes.
 
+#### State Management
 
+- State management could be handled using built-in React Contexts. However, as the app grows, the state becomes more complex. Updating this with a single reducer may cause unnecessary rendering. **React Redux** will ensure only the required sections are re-rendered.
+- Also, **Redux Toolkit** uses the concept of state slices which greatly reduces the amount of boilerplate code we need to write.
+- We have used **Redux Thunk** before. This offers simple middleware that allows us to write action creators. These return action functions (instead of the typical action objects). An action function can dispatch async actions, like API calls, and wait for results.
+- We will use this project to investigate the use of **Redux Saga**. While these allow for more complex async handling, this app is still only performing basic search API functionality.
 
+##### Redux
+- In Redux Thunk, action creators can dispatch multiple actions, handle conditional logic, and perform asynchronous api calls before dispatching an action to the reducer.
+- In Redux Saga, sagas listen for dispatched actions and then run generator functions to perform tasks responding to those actions.
 
+Making API Calls with Redux Thunk
+Redux Thunk is often used for making api calls within action creators. Within the thunk, you can then dispatch actions in response to the api call's response.
 
+Redux saga handles api calls by pausing generator functions until the api response is received. The saga can then process the response or dispatch actions.
 
-
+unlike Redux-Thunk, which utilizes callback functions, a Redux-Saga thread can be started, paused and cancelled from the main application with normal Redux actions.
 
 #### Page layout
 
@@ -86,9 +98,7 @@ In v5, we also wrapped the entire app with the `BrowserRouter`, but we could pla
 
 #### Technical Considerations
 
-- Client-side routing is required for a simple page app. React router is one of the most convenient and popular. It also accommodates parameters in routes which allows us to route to a page to edit a single movie (based on the unique id).
 - We configure the routes in a utility file. The route data is maintained in a map, that is referenced by enum keys. This allows us to avoid using the same route path string in multiple locations in the code.
-- State management could be handled using a built-in React Context. However, we will be storing reviews, search results, and viewing history in the data model. Updating these with a single reducer may cause unnecessary rendering. React redux will ensure only the required sections are re-rendered. Also, the latest version of react redux uses the concept of slices which greatly reduces the amount of boilerplate code to write.
 - Bootstrap is an excellent library for responsiveness. Therefore we will use the React-bootstrap library, which is built specifically for react. It also provides useful navbar and form components.
 - After searching for a movie, the response contains an IMDb ID. This ID is unique and we will use this when for referencing movies / reviews.
 - The original idea was to group components into common, controls, pages etc. - based on their type. But as the project progressed, it was more useful to group them by their features. 

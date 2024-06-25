@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import {BrowserRouter, RouterProvider} from 'react-router-dom';
-// import store from 'state/store';
+import store from 'state/store';
 import './App.scss';
 import appRouter from 'components/routes/appRouter';
 
@@ -14,11 +14,11 @@ import appRouter from 'components/routes/appRouter';
 const App = () => {
 
     return (
-        // <Provider store={store}>
+        <Provider store={store}>
                 <div id="app">
                     <RouterProvider router={appRouter}/>
                 </div>
-        // </Provider>
+        </Provider>
     );
 };
 

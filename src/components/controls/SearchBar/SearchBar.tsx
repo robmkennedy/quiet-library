@@ -3,6 +3,8 @@ import { InputGroup, Button, Form } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 type SearchBarProps = {
+    placeholder: string;
+    searchLabel: string;
     onSearch: (searchValue: string) => void;
 };
 
@@ -12,7 +14,7 @@ type SearchBarProps = {
  * is clicked.
  */
 export default function SearchBar(props: SearchBarProps) {
-    const { onSearch } = props;
+    const { placeholder, searchLabel, onSearch } = props;
 
     const { t } = useTranslation();
     const [inputValue, setInputValue] = useState('');
@@ -34,14 +36,12 @@ export default function SearchBar(props: SearchBarProps) {
     return (
         <div className="rk-search-bar mb-5">
             <InputGroup className="mb-3">
-                <Form.Control placeholder={t('features.search.enter')}
-                              aria-label={t('features.search.enter')}
+                <Form.Control placeholder={placeholder}
+                              aria-label={searchLabel}
                               onChange={handleChange}
                               onKeyUp={handleKeyUp}
                               value={inputValue} />
-                <Button variant="outline-primary" onClick={handleClick} disabled={!inputValue}>
-                    {t('common.search')}
-                </Button>
+                <Button variant="outline-primary" onClick={handleClick} disabled={!inputValue}>{searchLabel}</Button>
             </InputGroup>
         </div>
     );

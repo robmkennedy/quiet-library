@@ -9,6 +9,7 @@ import PageHeader from 'components/common/Page/PageHeader/PageHeader';
 // import { useGetAboutContentQuery } from 'state/slices/aboutApiSlice';
 import './TitlesPage.scss';
 import Page from "../../../common/Page/Page";
+import SearchBar from '../../../controls/SearchBar/SearchBar';
 
 /**
  * A page used to described details about how the application was built. 
@@ -36,13 +37,18 @@ export default function TitlesPage() {
     //     );
     // }
 
+    const handleSearch = (): void => {
+
+    };
+
     return (
         <Page id='titlesPage'>
             <PageHeader>
                 <PageTitle title={t('features.titles.title')} />
             </PageHeader>
-            <div className='rk-about-content'>
-            </div>
+            <SearchBar placeholder={t('features.titles.search.placeholder')}
+                       searchLabel={t('features.titles.search.searchLabel')}
+                       onSearch={handleSearch} />
         </Page>
     );
 };

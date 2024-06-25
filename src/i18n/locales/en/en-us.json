@@ -15,18 +15,37 @@
     },
     "features": {
         "titles": {
-            "title": "Titles",
-            "enter": "Enter Book Title",
+            "title": "Search Books by Title",
+            "search": {
+                "placeholder": "Enter Book Title",
+                "searchLabel": "Search for Books",
+                "showMore": "Show More Books"
+            },
             "results": {
-                "searching": "Searching for book",
+                "loading": "Searching for book",
                 "error": "An error has occurred when searching for the book. Please try again.",
                 "request": "Please enter a book title in the field and click the Search button.",
                 "notFound": "Unable to find a matching book title. Please try again."
             },
-            "buttons": {
-                "showMore": "Show More Search Results"
+            "covers": {
+                "loading": "Loading cover",
+                "error": "Unable to load book cover"
+            }
+        },
+        "subjects": {
+            "title": "Search Books by Subject",
+            "search": {
+                "placeholder": "Enter Subject Text",
+                "searchLabel": "Search for Books",
+                "showMore": "Show More Books"
             },
-            "cover": {
+            "results": {
+                "loading": "Searching for book",
+                "error": "An error has occurred when searching for the book. Please try again.",
+                "request": "Please enter a book subject in the field and click the Search button.",
+                "notFound": "Unable to find books matching that subject matter. Please try again."
+            },
+            "covers": {
                 "loading": "Loading cover",
                 "error": "Unable to load book cover"
             }
